@@ -1,6 +1,6 @@
 import { FaLinkedin } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
-import { handleclickEmail, handleClickLkd } from "../utils";
+import { FaFolderOpen } from "react-icons/fa";
+import { handleclickPortfolio, handleClickLkd } from "../utils";
 
 export default function Info() {
   return (
@@ -9,19 +9,12 @@ export default function Info() {
       <div className="info">
         <h1>Sabrina Amaral</h1>
         <h2>Frontend Developer</h2>
-        <a
-          href="https://sabrinamaral.github.io/portfolio/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          sabrinamaral website
-        </a>
         <div className="btn-container">
-          <button onClick={handleclickEmail}>
-            <MdEmail
+          <button onClick={handleclickPortfolio}>
+            <FaFolderOpen
               style={{ marginRight: "8px", height: "16px", width: "16px" }}
             />
-            Email
+            Portfolio
           </button>
           <button onClick={handleClickLkd} className="lkd">
             <FaLinkedin
