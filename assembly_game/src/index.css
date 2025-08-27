@@ -1,0 +1,183 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 20px;
+  background-color: #262626;
+  color: #f9f4da;
+  font-family: "Hanken Grotesk", Arial, sans-serif;
+}
+
+header {
+  text-align: center;
+  margin: 0 auto;
+}
+
+header h1 {
+  font-weight: 400;
+  font-size: 1.3rem;
+  margin-top: 3rem;
+}
+
+header p {
+  max-width: 350px;
+  color: #8e8e8e;
+  display: inline-block;
+}
+
+.game-status {
+  min-height: 57px;
+  max-width: 350px;
+  text-align: center;
+  margin: 10px auto;
+}
+
+.game-status h2 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  padding: 0;
+  margin: 0;
+}
+.game-status p {
+  padding: 0;
+  margin: 0;
+}
+
+.game-status > section {
+  min-height: 57px;
+  max-width: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 4px;
+}
+
+.game-status > .win {
+  background-color: #10a95b;
+}
+.game-status > .lose {
+  background-color: #ba2a2a;
+}
+
+.game-status > .farewell {
+  background-color: #7a5ea7;
+}
+
+.languages {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 3px;
+  max-width: 350px;
+  margin: 36px auto;
+}
+
+.languages span {
+  padding: 5px;
+  border-radius: 3px;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+/* Dimmed overlay with skull on "lost" languages */
+
+span.chip {
+  border-radius: 3px;
+  padding: 5px;
+  position: relative;
+}
+
+span.chip.lost::before {
+  content: "💀";
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  font-size: 0.85rem;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/*  */
+
+.letters {
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+}
+
+.letter {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #323232;
+  border-bottom: 1px solid #f9f4da;
+  margin-bottom: 36px;
+  font-size: 1.125rem;
+  font-weight: bold;
+}
+
+.letters .not-guessed-letters {
+  color: #ec5d49;
+}
+
+.keyboard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 12px;
+  max-width: 480px;
+  gap: 8px;
+  margin-bottom: 36px;
+}
+
+.keyboard > button {
+  background-color: #fcba29;
+  height: 40px;
+  width: 40px;
+  border: 1px solid #d7d7d7;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.keyboard > button:disabled {
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+button.new-game {
+  background-color: #11b5e5;
+  border: 1px solid #d7d7d7;
+  border-radius: 4px;
+  width: 225px;
+  height: 40px;
+  padding: 6px 12px;
+  display: block;
+  margin-inline: auto;
+  cursor: pointer;
+}
+
+/* Accessibility | screen-readers */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
